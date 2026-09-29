@@ -8,29 +8,122 @@
   
   <title>Frontend Mentor | Product preview card component</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 0.6875rem; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    .body {
+      background-color: hsl(30, 38%, 92%); 
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      margin: 0;
+    }
+    .card {
+      display: flex;
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+
+    }
+    picture {
+      display: contents;
+    }
+    .image {
+      width: 50%;
+      align-self: stretch;
+      object-fit: cover;
+    }
+    .content {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+    }
+    h4 {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.75rem;
+      color: hsl(228, 12%, 48%);
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+    }
+    h2 {
+      font-family: serif;
+    }
+    p {
+      color: hsl(228, 12%, 48%);
+      font-family: "Fraunces", sans-serif;
+    }
+    .price-row {
+      display: flex;
+      align-items: center;
+    }
+    .current-price {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: hsl(158, 36%, 37%);
+      padding-right: 4px;
+    }
+    button {
+      background-color: hsl(158, 36%, 37%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: hsl(158, 42%, 18%);
+    }
+
+    @media (max-width:375px){
+      .card{
+        flex-direction: column;
+      }
+
+      .image{
+        width: 100%;
+      }
+    }
+
   </style>
 </head>
-<body>
+<body class="body">
 
-  Perfume
+  <div class="card">
 
-  Gabrielle Essence Eau De Parfum
+    <picture>
+      <source media="(max-width: 375px)" srcset="./images/image-product-mobile.jpg">
+      <img src="./images/image-product-desktop.jpg" alt="Perfume bottle" class="image">
+    </picture>
 
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
+    <div class="content">
 
-  $149.99
-  $169.99
+    <h4>Perfume</h4>
+    
+    <h2>Gabrielle Essence Eau De Parfum</h2>
+    
+    <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.
+    </p>
+   
+    <div class="price-row">
+      <p class="current-price">$149.99</p>
+      <p class="old-price"><s>$169.99</s></p>
+    </div>
+    
+    <button>Add to Cart</button>
 
-  Add to Cart
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+    </div>
+
+  </div>
+
 </body>
 </html>
